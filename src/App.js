@@ -5,10 +5,10 @@ function App() {
     <>
       <GlobalStyle />
       <Navbar />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
+      {/* <About /> */}
+      {/* <Projects /> */}
+      {/* <Contact /> */}
+      {/* <Footer /> */}
     </>
   );
 }

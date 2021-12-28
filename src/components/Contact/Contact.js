@@ -24,12 +24,14 @@ const StyledContact = styled.div`
   div {
     width: 500px;
     height: 200px;
-    border: 1px solid #000;
-    margin: 0 auto;
+    border: 1px solid #276678;
+    border-radius: 30px;
+    margin: 1rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-size: 1.5rem;
 
     a {
       font-weight: bolder;

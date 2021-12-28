@@ -6,39 +6,42 @@ const About = () => {
   return (
     <>
       <StyledAbout id="about">
-        <div>
-          <img src={formal} alt="" />
-        </div>
-        <div>
-          <h1>
-            {`> Rodel David`}
-            <span>&nbsp;&nbsp;</span>
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
+        <Description>
+          <div>
+            <img src={formal} alt="" />
+          </div>
+          <div>
+            <h1>
+              {`> Rodel David`}
+              <span>&nbsp;&nbsp;</span>
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum
+              dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </Description>
+
+        <Technologies>
+          <h3>Technologies I've Worked With</h3>
+          <div>
+            <img src="http://source.unsplash.com/random/200x200" alt="" />
+            <img src="http://source.unsplash.com/random/200x201" alt="" />
+            <img src="http://source.unsplash.com/random/200x202" alt="" />
+            <img src="http://source.unsplash.com/random/200x203" alt="" />
+            <img src="http://source.unsplash.com/random/200x203" alt="" />
+            <img src="http://source.unsplash.com/random/200x204" alt="" />
+            <img src="http://source.unsplash.com/random/200x205" alt="" />
+            <img src="http://source.unsplash.com/random/200x206" alt="" />
+            <img src="http://source.unsplash.com/random/200x207" alt="" />
+            <img src="http://source.unsplash.com/random/200x208" alt="" />
+          </div>
+        </Technologies>
       </StyledAbout>
-      <Technologies>
-        <h3>Technologies I've Worked With</h3>
-        <div>
-          <img src="http://source.unsplash.com/random/200x200" alt="" />
-          <img src="http://source.unsplash.com/random/200x201" alt="" />
-          <img src="http://source.unsplash.com/random/200x202" alt="" />
-          <img src="http://source.unsplash.com/random/200x203" alt="" />
-          <img src="http://source.unsplash.com/random/200x203" alt="" />
-          <img src="http://source.unsplash.com/random/200x204" alt="" />
-          <img src="http://source.unsplash.com/random/200x205" alt="" />
-          <img src="http://source.unsplash.com/random/200x206" alt="" />
-          <img src="http://source.unsplash.com/random/200x207" alt="" />
-          <img src="http://source.unsplash.com/random/200x208" alt="" />
-        </div>
-      </Technologies>
     </>
   );
 };
@@ -64,14 +67,16 @@ const blinkingText = keyframes`
 `;
 
 const StyledAbout = styled.div`
+  padding: 3rem 8rem;
+  background-color: #f6f5f5;
+`;
+const Description = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 80px;
-  padding: 3rem 8rem;
-  background-color: #f6f5f5;
 
-  div {
+  div:first-child {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +92,7 @@ const StyledAbout = styled.div`
     }
   }
 
-  div {
+  div:last-child {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -108,8 +113,6 @@ const StyledAbout = styled.div`
     }
   }
 `;
-
-const Blinking = styled.span``;
 
 const Technologies = styled.div`
   margin-top: 2rem;
