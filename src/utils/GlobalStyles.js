@@ -6,8 +6,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 }
-html{
+${
+  "" /* html{
     scroll-behavior: smooth;
+} */
 }
 body {
     background-color: #e5e5e5;
@@ -25,8 +27,13 @@ export default GlobalStyle;
 
 export const ContainerWhite = styled.div`
   width: 100%;
-  padding: 1rem 8rem;
+
   background-color: #f6f5f5;
+  padding: 1rem 2rem;
+
+  @media (min-width: 960px) {
+    padding: 1rem 8rem;
+  }
 `;
 
 export const ContainerColored = styled.div``;
