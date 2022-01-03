@@ -6,10 +6,27 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 }
-${
-  "" /* html{
-    scroll-behavior: smooth;
-} */
+
+html {
+  /* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 }
 body {
     background-color: #e5e5e5;
@@ -25,15 +42,12 @@ a{
 
 export default GlobalStyle;
 
-export const ContainerWhite = styled.div`
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
 
-  background-color: #f6f5f5;
-  padding: 1rem 2rem;
-
-  @media (min-width: 960px) {
-    padding: 1rem 8rem;
-  }
+  @media (min-width: 900px) {
+    flex-direction: row;
+  } ;
 `;
-
-export const ContainerColored = styled.div``;
