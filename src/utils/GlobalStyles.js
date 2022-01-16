@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -30,24 +30,37 @@ html {
 }
 body {
     background-color: #e5e5e5;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    color: #525f7f;
 
 }
 a{
-    color: #000;
+    ${"" /* color: #000; */}
     text-decoration: none;
+    cursor: pointer;
+}
+
+h1, h2 {
+  font-family: 'Roboto Slab';
+  font-weight: 900;
 }
 
 `;
 
 export default GlobalStyle;
 
+const fadeIn = keyframes`
+from {opacity: 0}
+to {opacity: 1}
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  animation: ${fadeIn} 2s;
 
-  @media (min-width: 900px) {
+  @media (min-width: 930px) {
     flex-direction: row;
   } ;
 `;
