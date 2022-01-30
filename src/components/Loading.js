@@ -1,21 +1,17 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-const Loading = () => {
+const Loading = ({ displaySpinner }) => {
   return (
     <StyledLoading>
-      <Spinner />
+      <Spinner displaySpinner={displaySpinner} />
     </StyledLoading>
   );
 };
 
-const StyledLoading = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: #e5e5e5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const fadeOut = keyframes`
+  from {opacity: 1}
+  to {opacity: 0}
 `;
 
 const rotate = keyframes`
@@ -27,14 +23,31 @@ const rotate = keyframes`
     transform: rotate(360deg);
   }
 `;
+
+const StyledLoading = styled.div`
+  animation: ${fadeOut} 1s;
+  animation-delay: 2s;
+  align-items: center;
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 999;
+`;
+
 const Spinner = styled.div`
   animation: ${rotate} 0.5s infinite linear;
-  width: 50px;
-  height: 50px;
   border: 3px solid #e5e5e5;
   border-bottom: 3px solid #747fe0;
   border-radius: 50%;
+  display: ${({ displaySpinner }) => (displaySpinner ? "block" : "none")};
+  height: 50px;
   margin: 0;
+  width: 50px;
 `;
 
 export default Loading;

@@ -1,11 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import formal from "../assets/formal.png";
-// import NavProfile from "./NavProfile";
-import About from "./About";
-import Skills from "./Skills";
-import Contact from "./Contact";
-import UpArrow from "./UpArrow";
+
 import { MdEmail, MdLocationPin } from "react-icons/md";
 import { FaGithub, FaMobileAlt } from "react-icons/fa";
 
@@ -24,15 +20,23 @@ const Profile = () => {
             <MdEmail size="1.5rem" />
             <p>rodelcdavid@gmail.com</p>
           </a>
-          <a href="https://github.com/rodelcdavid" target="_blank">
+          <a
+            href="https://github.com/rodelcdavid"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaGithub size="1.5rem" />
             <p>@rodelcdavid</p>
           </a>
-          <a href="https://goo.gl/maps/Lwzt5RiNP1DJGZQY7" target="_blank">
+          <a
+            href="https://goo.gl/maps/Lwzt5RiNP1DJGZQY7"
+            target="_blank"
+            rel="noreferrer"
+          >
             <MdLocationPin size="1.5rem" />
             <p>Tarlac, PH</p>
           </a>
-          <a href="tel:+639605756787" target="_blank">
+          <a href="tel:+639605756787" target="_blank" rel="noreferrer">
             <FaMobileAlt size="1.5rem" />
             <p>+63 960 575 6787</p>
           </a>
@@ -56,7 +60,7 @@ const StyledProfile = styled.div`
   flex-direction: column;
   height: 100vh;
   justify-content: center;
-  min-height: 480px;
+  min-height: 500px;
   padding: 1rem 0.5rem;
   position: relative;
   z-index: 0;
@@ -68,6 +72,7 @@ const StyledProfile = styled.div`
 
   hr {
     border: 3px solid #fff;
+    border-radius: 2px;
     border-top: none;
     margin: 2rem 0;
     width: 100%;
@@ -130,7 +135,7 @@ const StyledProfile = styled.div`
   }
 
   /* Media Queries */
-  @media (min-width: 930px) {
+  @media (min-width: 1020px) {
     box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.23);
     height: 100vh;
     min-height: initial;
@@ -143,7 +148,7 @@ const StyledProfile = styled.div`
     }
   }
 
-  @media (max-height: 480px) and (min-width: 930px) {
+  @media (max-height: 480px) and (min-width: 1020px) {
     hr,
     & > div:last-child p {
       display: none;

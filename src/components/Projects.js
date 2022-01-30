@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import wave from "../assets/wave.svg";
 import test from "../assets/test.jpg";
+import msf from "../assets/medical-specialist-finder-preview.png";
 import projectList from "../projectList";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import theme from "../utils/theme";
+import previewBg from "../assets/preview-background.jpg";
 
 const Projects = () => {
   return (
@@ -12,54 +13,25 @@ const Projects = () => {
       <h2>Projects</h2>
       {projectList.map((item, i) => {
         return (
-          <ProjectCard key={i}>
-            {/* <img src="http://source.unsplash.com/random/400x600" alt="" /> */}
-            <img src={test} alt="" />
+          <ProjectCard key={i} previewBg={previewBg} projectType={item.type}>
+            <div>
+              <img src={item.imgPreview} alt="" />
+            </div>
             <div>
               <h2>{item.name}</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <div
-                style={{
-                  display: "flex",
-                  gap: "5px",
-                  flexWrap: "wrap",
-                  width: "100%",
-                  marginTop: "10px",
-                }}
-              >
+              <p>{item.description}</p>
+              <div>
                 {item.tags.map((tag, i) => {
-                  return (
-                    <span
-                      key={i}
-                      style={{
-                        // display: "flex",
-                        padding: "0.5rem",
-                        border: "2px solid lightgreen",
-                        borderRadius: "5px",
-                        fontSize: "0.8rem",
-                      }}
-                    >
-                      {tag}
-                    </span>
-                  );
+                  return <span key={i}>{tag}</span>;
                 })}
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  gap: "10px",
-                  marginTop: "1rem",
-                }}
-              >
+              <div>
                 <button onClick={() => window.open(item.demoUrl, "_blank")}>
-                  <FaExternalLinkAlt style={{ marginRight: "5px" }} /> Live Demo
+                  <FaExternalLinkAlt /> Live Demo
                 </button>
 
                 <button onClick={() => window.open(item.sourceUrl, "_blank")}>
-                  <FaGithub style={{ marginRight: "5px" }} /> View Source
+                  <FaGithub /> View Source
                 </button>
               </div>
             </div>
@@ -71,7 +43,6 @@ const Projects = () => {
 };
 
 const StyledProjects = styled.div`
-  /* height: 1000px; */
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -89,7 +60,7 @@ const StyledProjects = styled.div`
     border-radius: 5px;
     letter-spacing: 3px;
   }
-  @media (min-width: 930px) {
+  @media (min-width: 1020px) {
     padding: 1rem 0 1rem 30%;
     width: 100%;
   }
@@ -102,49 +73,85 @@ const ProjectCard = styled.div`
   display: flex;
   flex-direction: column;
   height: 600px;
-  /* border: 1px solid #000; */
   margin-top: 1rem;
   overflow: hidden;
   position: relative;
-  width: 350px;
+  width: 340px;
 
-  img {
-    height: 50%;
+  & > div:first-child {
+    height: 40%;
     width: 100%;
-  }
+    background: url(${({ previewBg }) => previewBg});
+    background-position: center;
+    background-size: cover;
+    position: relative;
 
-  button {
-    background-color: #747fe0;
-    border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.23);
-    color: #fff;
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: all ease-in 150ms;
-
-    &:hover {
-      /* transform: scale(1.01); */
-      background-color: #7795f8;
-      transform: translateY(-1px);
+    img {
+      width: 85%;
+      position: relative;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
     }
   }
 
-  & > div {
+  & > div:last-child {
     display: flex;
     flex-direction: column;
-    height: 50%;
+    height: 60%;
     justify-content: center;
     padding: 0.5rem;
     text-align: left;
     width: 100%;
     z-index: 2;
+
     h2 {
-      /* text-align: center; */
       font-family: "Ubuntu";
     }
 
     p {
       margin-top: 1rem;
+    }
+
+    div:nth-child(3) {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 10px;
+
+      span {
+        padding: 0.5rem;
+        border: 2px solid lightgreen;
+        border-radius: 5px;
+        font-size: 0.8rem;
+      }
+    }
+
+    div:last-child {
+      display: flex;
+      gap: 10px;
+      margin-top: 1rem;
+
+      button {
+        background-color: #747fe0;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.23);
+        color: #fff;
+        cursor: pointer;
+        padding: 0.5rem;
+        transition: all ease-in 150ms;
+
+        svg {
+          margin-right: 5px;
+        }
+        &:hover {
+          background-color: #7795f8;
+          transform: translateY(-1px);
+        }
+      }
     }
   }
 
@@ -152,24 +159,45 @@ const ProjectCard = styled.div`
     content: url(${wave});
     left: 0;
     position: absolute;
-    top: 215px;
+    top: 155px;
     transform: scaleY(0.4);
     width: 100%;
     z-index: 1;
   }
 
+  &::before {
+    content: "${({ projectType }) => projectType}";
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 0.5rem 1.5rem;
+    /* border-radius: 20px; */
+    background-color: #747fe0;
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    z-index: 2;
+    transform: rotate(-45deg);
+  }
+
   /* Media Queries */
-  //1000px, min width 300px profile
-  @media (min-width: 650px) {
+
+  @media (min-width: 720px) {
     flex-direction: row;
-    height: 300px;
-    width: 600px;
-    img {
+    height: 350px;
+    width: 700px;
+
+    & > div:first-child {
       height: 100%;
       width: 50%;
+
+      img {
+        top: 50%;
+        transform: translateY(-50%);
+        left: 8px;
+      }
     }
 
-    & > div {
+    & > div:last-child {
       height: 100%;
       width: 50%;
 
@@ -179,12 +207,10 @@ const ProjectCard = styled.div`
     }
 
     &::after {
-      content: url(${wave});
-      left: 120px;
-      position: absolute;
-      top: 80px;
-      transform: rotate(-90deg);
-      width: 320px;
+      left: 150px;
+      top: 100px;
+      transform: scaleX(0.7) rotate(-90deg);
+      width: 360px;
     }
   }
 `;

@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, keyframes } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -35,7 +35,6 @@ body {
 
 }
 a{
-    ${"" /* color: #000; */}
     text-decoration: none;
     cursor: pointer;
 }
@@ -47,20 +46,14 @@ h1, h2 {
 
 `;
 
-export default GlobalStyle;
-
-const fadeIn = keyframes`
-from {opacity: 0}
-to {opacity: 1}
-`;
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  animation: ${fadeIn} 2s;
 
-  @media (min-width: 930px) {
+  @media (min-width: 1020px) {
     flex-direction: row;
   } ;
 `;
+
+export default GlobalStyle;
