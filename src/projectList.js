@@ -19,7 +19,6 @@ const projects = [
       "bcrypt",
       "react-router-dom",
       "react-hook-form",
-      "yup",
     ],
     demoUrl: "https://rodelcdavid.github.io/picmodoro/",
     sourceUrl: "http://www.github.com",

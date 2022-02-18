@@ -76,7 +76,7 @@ const ProjectCard = styled.div`
   margin-top: 1rem;
   overflow: hidden;
   position: relative;
-  width: 340px;
+  width: 300px;
 
   & > div:first-child {
     height: 40%;
