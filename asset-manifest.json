@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.9f8fb79b.js",
+    "main.js": "/static/js/main.d40034d5.js",
     "static/media/picmodoro-preview.png": "/static/media/picmodoro-preview.ea0256caa6cb2a15dae6.png",
     "static/media/medical-specialist-finder-preview.png": "/static/media/medical-specialist-finder-preview.d1eda3f0d182d421836f.png",
     "static/media/formal.png": "/static/media/formal.f59dd029efc242cead99.png",
@@ -9,9 +9,9 @@
     "static/media/preview-background.jpg": "/static/media/preview-background.8c961f2240cb9edc2bbd.jpg",
     "static/media/wave.svg": "/static/media/wave.fc66fbd0c43ca851c7d7585ade0c8e22.svg",
     "index.html": "/index.html",
-    "main.9f8fb79b.js.map": "/static/js/main.9f8fb79b.js.map"
+    "main.d40034d5.js.map": "/static/js/main.d40034d5.js.map"
   },
   "entrypoints": [
-    "static/js/main.9f8fb79b.js"
+    "static/js/main.d40034d5.js"
   ]
 }
