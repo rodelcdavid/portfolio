@@ -101,7 +101,7 @@ const ProjectCard = styled.div`
     flex-direction: column;
     height: 60%;
     justify-content: center;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     text-align: left;
     width: 100%;
     z-index: 2;
