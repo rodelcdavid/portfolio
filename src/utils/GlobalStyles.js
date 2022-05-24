@@ -39,10 +39,13 @@ a{
     cursor: pointer;
 }
 
+h1 {
+  font-size: 1.7rem;
+}
+
 h1, h2 {
   font-family: ${({ theme }) => theme.fonts.heading};
   font-weight: 900;
-  font-size: 1.8rem ;
 }
 `;
 

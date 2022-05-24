@@ -105,8 +105,6 @@ const StyledProfile = styled.section`
   }
 
   & > div:last-child {
-    /* border: 1px solid magenta; */
-    /* height: 100%; */
     align-items: center;
     display: flex;
     flex-direction: column;

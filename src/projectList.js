@@ -1,5 +1,4 @@
 import msf from "../src/assets/medical-specialist-finder-preview.png";
-import bc from "../src/assets/boredom-challenge-preview.png";
 import picmodoro from "../src/assets/picmodoro-preview.png";
 import bookxmovie from "../src/assets/bookxmovie-preview.png";
 
@@ -47,15 +46,6 @@ const projects = [
     demoUrl: "https://picmodoro.netlify.app/",
     sourceUrl: "https://github.com/rodelcdavid/picmodoro",
     imgPreview: picmodoro,
-    type: "Personal Project",
-  },
-  {
-    name: "30-Day Boredom Challenge",
-    description: `A web app that will help you gain back your attention span by embracing boredom in a span of 30 days. Inspired by Chris Bailey's TED Talk titled "How to Get Your Brain to Focus". `,
-    tags: ["ReactJS", "Styled Components", "Context API", "react-router-dom"],
-    demoUrl: "https://rodelcdavid.github.io/boredom-challenge/",
-    sourceUrl: "https://github.com/rodelcdavid/boredom-challenge",
-    imgPreview: bc,
     type: "Personal Project",
   },
   {

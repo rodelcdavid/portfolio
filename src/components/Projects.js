@@ -8,7 +8,7 @@ import previewBg from "../assets/preview-background.jpg";
 const Projects = () => {
   return (
     <StyledProjects>
-      <h2>Projects</h2>
+      <h1>Projects</h1>
       {projectList.map((item, i) => {
         return (
           <ProjectCard key={i} previewBg={previewBg} projectType={item.type}>
@@ -48,10 +48,8 @@ const StyledProjects = styled.section`
   padding: 1rem 0.5rem;
   position: relative;
 
-  h2 {
+  & > h1 {
     color: ${({ theme }) => theme.colors.textBlack};
-  }
-  & > h2 {
     padding: 0 1.5rem;
     border-bottom: 5px solid ${({ theme }) => theme.colors.accent};
     border-radius: 5px;
@@ -106,6 +104,7 @@ const ProjectCard = styled.div`
 
     h2 {
       font-family: ${({ theme }) => theme.fonts.body};
+      color: ${({ theme }) => theme.colors.textBlack};
     }
 
     p {
@@ -139,6 +138,7 @@ const ProjectCard = styled.div`
         box-shadow: ${({ theme }) => theme.shadows[0]};
         color: ${({ theme }) => theme.colors.primary};
         cursor: pointer;
+        font-size: 0.8rem;
         padding: 0.5rem;
         transition: all ease-in 150ms;
 
