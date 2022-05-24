@@ -9,16 +9,17 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const [displaySpinner, setDisplaySpinner] = useState(true);
 
-  //displaySpinner = animation delay
-  //displayspinner + animation - 100ms = total loading
   useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 2900);
-
+    //how long spinner is displayed before fadeout starts
     setTimeout(() => {
       setDisplaySpinner(false);
     }, 2000);
+
+    //displayspinner + fadeout duration - white blink fix = total loading animation
+    //2000ms + 1000ms - 100ms = 2900ms
+    setTimeout(() => {
+      setLoaded(true);
+    }, 2900);
   }, []);
 
   return (
@@ -29,7 +30,7 @@ function App() {
 
       <Wrapper>
         <Profile />
-        <Projects setLoaded={setLoaded} id="projects" />
+        <Projects />
       </Wrapper>
     </ThemeProvider>
   );

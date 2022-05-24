@@ -1,20 +1,23 @@
 const theme = {
   colors: {
-    primary: "red",
-    secondary: "",
-    accent: "",
-    textDark: "#000",
-    textLight: "",
+    primary: "#fff",
+    secondary: "#e5e5e5",
+    accent: "#747fe0",
+    accentLight: "#7795f8",
+    accentGreen: "#90ee90",
+    textGrey: "#525f7f",
+    textBlack: "#000",
   },
+  shadows: [
+    "0 5px 10px rgba(0, 0, 0, 0.23)",
+    "5px 0px 10px rgba(0, 0, 0, 0.23)",
+  ],
   fonts: {
-    serif: "Merriweather",
-    sansSerif: "Ubuntu",
+    heading: "Roboto Slab",
+    body: "Ubuntu",
   },
-  device: {
-    mobile: "",
-    tablet: "",
-    laptop: "",
-  },
+
+  breakpoints: ["1020px", "720px"],
 };
 
 export default theme;

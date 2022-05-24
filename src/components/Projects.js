@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import wave from "../assets/wave.svg";
-import test from "../assets/test.jpg";
-import msf from "../assets/medical-specialist-finder-preview.png";
 import projectList from "../projectList";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import previewBg from "../assets/preview-background.jpg";
@@ -26,13 +24,13 @@ const Projects = () => {
                 })}
               </div>
               <div>
-                <button onClick={() => window.open(item.demoUrl, "_blank")}>
+                <a onClick={() => window.open(item.demoUrl, "_blank")}>
                   <FaExternalLinkAlt /> Live Demo
-                </button>
+                </a>
 
-                <button onClick={() => window.open(item.sourceUrl, "_blank")}>
+                <a onClick={() => window.open(item.sourceUrl, "_blank")}>
                   <FaGithub /> View Source
-                </button>
+                </a>
               </div>
             </div>
           </ProjectCard>
@@ -42,7 +40,7 @@ const Projects = () => {
   );
 };
 
-const StyledProjects = styled.div`
+const StyledProjects = styled.section`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -51,28 +49,27 @@ const StyledProjects = styled.div`
   position: relative;
 
   h2 {
-    /* color: #000; */
-    color: ${({ theme }) => theme.colors.textDark};
+    color: ${({ theme }) => theme.colors.textBlack};
   }
   & > h2 {
     padding: 0 1.5rem;
-    border-bottom: 5px solid #747fe0;
+    border-bottom: 5px solid ${({ theme }) => theme.colors.accent};
     border-radius: 5px;
     letter-spacing: 3px;
   }
-  @media (min-width: 1020px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
     padding: 1rem 0 1rem 30%;
     width: 100%;
   }
 `;
 
 const ProjectCard = styled.div`
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.23);
-  background-color: #fff;
+  box-shadow: ${({ theme }) => theme.shadows[0]};
+  background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height: 600px;
+  height: 680px;
   margin-top: 1rem;
   overflow: hidden;
   position: relative;
@@ -89,10 +86,11 @@ const ProjectCard = styled.div`
     img {
       width: 85%;
       position: relative;
-      top: 20px;
+      /* top: 20px; */
       left: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: ${({ theme }) => theme.shadows[0]};
     }
   }
 
@@ -107,7 +105,7 @@ const ProjectCard = styled.div`
     z-index: 2;
 
     h2 {
-      font-family: "Ubuntu";
+      font-family: ${({ theme }) => theme.fonts.body};
     }
 
     p {
@@ -123,7 +121,7 @@ const ProjectCard = styled.div`
 
       span {
         padding: 0.5rem;
-        border: 2px solid lightgreen;
+        border: 2px solid ${({ theme }) => theme.colors.accentGreen};
         border-radius: 5px;
         font-size: 0.8rem;
       }
@@ -134,12 +132,12 @@ const ProjectCard = styled.div`
       gap: 10px;
       margin-top: 1rem;
 
-      button {
-        background-color: #747fe0;
+      a {
+        background-color: ${({ theme }) => theme.colors.accent};
         border: none;
         border-radius: 3px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.23);
-        color: #fff;
+        box-shadow: ${({ theme }) => theme.shadows[0]};
+        color: ${({ theme }) => theme.colors.primary};
         cursor: pointer;
         padding: 0.5rem;
         transition: all ease-in 150ms;
@@ -148,7 +146,7 @@ const ProjectCard = styled.div`
           margin-right: 5px;
         }
         &:hover {
-          background-color: #7795f8;
+          background-color: ${({ theme }) => theme.colors.accentLight};
           transform: translateY(-1px);
         }
       }
@@ -159,7 +157,7 @@ const ProjectCard = styled.div`
     content: url(${wave});
     left: 0;
     position: absolute;
-    top: 155px;
+    top: 200px;
     transform: scaleY(0.4);
     width: 100%;
     z-index: 1;
@@ -167,11 +165,11 @@ const ProjectCard = styled.div`
 
   &::before {
     content: "${({ projectType }) => projectType}";
-    color: #fff;
+    color: ${({ theme }) => theme.colors.primary};
     font-size: 0.7rem;
     padding: 0.5rem 1.5rem;
     /* border-radius: 20px; */
-    background-color: #747fe0;
+    background-color: ${({ theme }) => theme.colors.accent};
     position: absolute;
     top: 20px;
     left: -30px;
@@ -181,9 +179,9 @@ const ProjectCard = styled.div`
 
   /* Media Queries */
 
-  @media (min-width: 720px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
     flex-direction: row;
-    height: 350px;
+    height: 370px;
     width: 700px;
 
     & > div:first-child {
@@ -207,10 +205,10 @@ const ProjectCard = styled.div`
     }
 
     &::after {
-      left: 150px;
+      left: 140px;
       top: 100px;
       transform: scaleX(0.7) rotate(-90deg);
-      width: 360px;
+      width: 380px;
     }
   }
 `;

@@ -28,7 +28,7 @@ const StyledLoading = styled.div`
   animation: ${fadeOut} 1s;
   animation-delay: 2s;
   align-items: center;
-  background: #e5e5e5;
+  background: ${({ theme }) => theme.colors.secondary};
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -41,8 +41,8 @@ const StyledLoading = styled.div`
 
 const Spinner = styled.div`
   animation: ${rotate} 0.5s infinite linear;
-  border: 3px solid #e5e5e5;
-  border-bottom: 3px solid #747fe0;
+  border: 3px solid ${({ theme }) => theme.colors.secondary};
+  border-bottom: 3px solid ${({ theme }) => theme.colors.accent};
   border-radius: 50%;
   display: ${({ displaySpinner }) => (displaySpinner ? "block" : "none")};
   height: 50px;

@@ -47,7 +47,7 @@ const Profile = () => {
   );
 };
 
-const StyledProfile = styled.div`
+const StyledProfile = styled.section`
   align-items: center;
   background: url("https://images.unsplash.com/photo-1512250591270-0bea37004c99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80")
     center center;
@@ -55,26 +55,21 @@ const StyledProfile = styled.div`
     center center;
 
   background-size: cover;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.primary};
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
-  min-height: 500px;
+  min-height: 550px;
   padding: 1rem 0.5rem;
   position: relative;
   z-index: 0;
 
-  h1 {
-    font-family: "Roboto Slab";
-    letter-spacing: 2px;
-  }
-
   hr {
-    border: 3px solid #fff;
+    border: 2px solid ${({ theme }) => theme.colors.primary};
     border-radius: 2px;
-    border-top: none;
-    margin: 2rem 0;
+    background-color: ${({ theme }) => theme.colors.primary};
+    margin: 1.5rem 0;
     width: 100%;
   }
 
@@ -94,16 +89,18 @@ const StyledProfile = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 0.5rem;
 
     & > img {
-      border: solid 5px #fff;
+      border: solid 4px ${({ theme }) => theme.colors.primary};
       border-radius: 100%;
-      box-shadow: 0 0 10px #000;
+      box-shadow: ${({ theme }) => theme.shadows[0]};
       width: 180px;
     }
 
     & > h1 {
       margin-top: 1rem;
+      letter-spacing: 3px;
     }
   }
 
@@ -119,7 +116,7 @@ const StyledProfile = styled.div`
     div {
       a {
         align-items: center;
-        color: #fff;
+        color: ${({ theme }) => theme.colors.primary};
         display: flex;
         gap: 30px;
         justify-content: flex-start;
@@ -127,16 +124,16 @@ const StyledProfile = styled.div`
         transition: all ease-in 150ms;
 
         &:hover {
-          color: #7795f8;
-          transform: scale(1.01);
+          color: ${({ theme }) => theme.colors.accentLight};
+          transform: scale(1.03);
         }
       }
     }
   }
 
   /* Media Queries */
-  @media (min-width: 1020px) {
-    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.23);
+  @media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+    box-shadow: ${({ theme }) => theme.shadows[1]};
     height: 100vh;
     min-height: initial;
     position: fixed;

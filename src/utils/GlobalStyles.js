@@ -29,9 +29,9 @@ html {
 }
 }
 body {
-    background-color: #e5e5e5;
-    font-family: 'Ubuntu', sans-serif;
-    color: #525f7f;
+    background-color: ${({ theme }) => theme.colors.secondary};
+    font-family: ${({ theme }) => theme.fonts.body};
+    color: ${({ theme }) => theme.colors.textGrey};
 
 }
 a{
@@ -40,18 +40,18 @@ a{
 }
 
 h1, h2 {
-  font-family: 'Roboto Slab';
+  font-family: ${({ theme }) => theme.fonts.heading};
   font-weight: 900;
+  font-size: 1.8rem ;
 }
-
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   width: 100%;
 
-  @media (min-width: 1020px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
     flex-direction: row;
   } ;
 `;
