@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/static/js/main.d40034d5.js",
-    "static/media/picmodoro-preview.png": "/static/media/picmodoro-preview.ea0256caa6cb2a15dae6.png",
+    "main.js": "/static/js/main.e37f673c.js",
+    "static/media/bookxmovie-preview.png": "/static/media/bookxmovie-preview.95b9b6d7bfa00a33127a.png",
+    "static/media/picmodoro-preview.png": "/static/media/picmodoro-preview.e38325462b1e9d45f7c9.png",
     "static/media/medical-specialist-finder-preview.png": "/static/media/medical-specialist-finder-preview.d1eda3f0d182d421836f.png",
     "static/media/formal.png": "/static/media/formal.f59dd029efc242cead99.png",
     "static/media/boredom-challenge-preview.png": "/static/media/boredom-challenge-preview.86882da804236d24dc3d.png",
-    "static/media/test.jpg": "/static/media/test.18255ba7ee4cefe072c5.jpg",
     "static/media/preview-background.jpg": "/static/media/preview-background.8c961f2240cb9edc2bbd.jpg",
     "static/media/wave.svg": "/static/media/wave.fc66fbd0c43ca851c7d7585ade0c8e22.svg",
     "index.html": "/index.html",
-    "main.d40034d5.js.map": "/static/js/main.d40034d5.js.map"
+    "main.e37f673c.js.map": "/static/js/main.e37f673c.js.map"
   },
   "entrypoints": [
-    "static/js/main.d40034d5.js"
+    "static/js/main.e37f673c.js"
   ]
 }
