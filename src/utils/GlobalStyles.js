@@ -34,6 +34,7 @@ body {
     color: ${({ theme }) => theme.colors.textGrey};
 
 }
+
 a{
     text-decoration: none;
     cursor: pointer;
@@ -41,6 +42,8 @@ a{
 
 h1 {
   font-size: 1.7rem;
+  letter-spacing: 3px;
+
 }
 
 h1, h2 {

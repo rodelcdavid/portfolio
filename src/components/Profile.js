@@ -7,14 +7,14 @@ import { FaGithub, FaMobileAlt } from "react-icons/fa";
 
 const Profile = () => {
   return (
-    <StyledProfile>
-      <div>
+    <ProfileContainer>
+      <ProfileHeader>
         <img src={formal} alt="" />
         <h1>Rodel David</h1>
         <p>Fullstack Developer</p>
-      </div>
-      <hr />
-      <div>
+      </ProfileHeader>
+      <ProfileDetails>
+        <hr />
         <div>
           <a href="mailto:rodelcdavid@gmail.com">
             <MdEmail size="1.5rem" />
@@ -41,13 +41,12 @@ const Profile = () => {
             <p>+63 960 575 6787</p>
           </a>
         </div>
-      </div>
-      {/* <p>Made by Rodel David c 2022</p> */}
-    </StyledProfile>
+      </ProfileDetails>
+    </ProfileContainer>
   );
 };
 
-const StyledProfile = styled.section`
+const ProfileContainer = styled.section`
   align-items: center;
   background: url("https://images.unsplash.com/photo-1512250591270-0bea37004c99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80")
     center center;
@@ -65,14 +64,6 @@ const StyledProfile = styled.section`
   position: relative;
   z-index: 0;
 
-  hr {
-    border: 2px solid ${({ theme }) => theme.colors.primary};
-    border-radius: 2px;
-    background-color: ${({ theme }) => theme.colors.primary};
-    margin: 1.5rem 0;
-    width: 100%;
-  }
-
   /* Overlay */
   &::after {
     content: "";
@@ -84,52 +75,6 @@ const StyledProfile = styled.section`
     z-index: -1;
   }
 
-  & > div:first-child {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0.5rem;
-
-    & > img {
-      border: solid 4px ${({ theme }) => theme.colors.primary};
-      border-radius: 100%;
-      box-shadow: ${({ theme }) => theme.shadows[0]};
-      width: 180px;
-    }
-
-    & > h1 {
-      margin-top: 1rem;
-      letter-spacing: 3px;
-    }
-  }
-
-  & > div:last-child {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-
-    div {
-      a {
-        align-items: center;
-        color: ${({ theme }) => theme.colors.primary};
-        display: flex;
-        gap: 30px;
-        justify-content: flex-start;
-        padding: 0.5rem;
-        transition: all ease-in 150ms;
-
-        &:hover {
-          color: ${({ theme }) => theme.colors.accentLight};
-          transform: scale(1.03);
-        }
-      }
-    }
-  }
-
-  /* Media Queries */
   @media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
     box-shadow: ${({ theme }) => theme.shadows[1]};
     height: 100vh;
@@ -142,14 +87,66 @@ const StyledProfile = styled.section`
       z-index: -1;
     }
   }
+`;
+
+const ProfileHeader = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem;
+
+  & > img {
+    border: solid 4px ${({ theme }) => theme.colors.primary};
+    border-radius: 100%;
+    box-shadow: ${({ theme }) => theme.shadows[0]};
+    width: 180px;
+  }
+
+  & > h1 {
+    margin-top: 1rem;
+  }
+`;
+
+const ProfileDetails = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  hr {
+    border: 2px solid ${({ theme }) => theme.colors.primary};
+    border-radius: 2px;
+    background-color: ${({ theme }) => theme.colors.primary};
+    margin: 1.5rem 0;
+    width: 100%;
+  }
+
+  div {
+    a {
+      align-items: center;
+      color: ${({ theme }) => theme.colors.primary};
+      display: flex;
+      gap: 30px;
+      justify-content: flex-start;
+      padding: 0.5rem;
+      transition: all ease-in 150ms;
+
+      &:hover {
+        color: ${({ theme }) => theme.colors.accentLight};
+        transform: scale(1.03);
+      }
+    }
+  }
 
   @media (max-height: 480px) and (min-width: 1020px) {
     hr,
-    & > div:last-child p {
+    p {
       display: none;
     }
 
-    & > div:last-child div {
+    div {
       display: flex;
       flex-direction: row;
       margin-top: 0.5rem;
