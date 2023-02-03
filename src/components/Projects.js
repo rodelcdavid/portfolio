@@ -65,7 +65,6 @@ const ProjectCard = styled.div`
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height: 680px;
   margin-top: 1rem;
   overflow: hidden;
   position: relative;
@@ -75,10 +74,11 @@ const ProjectCard = styled.div`
     content: url(${wave});
     left: 0;
     position: absolute;
-    top: 200px;
+    top: 130px;
     transform: scaleY(0.4);
     width: 100%;
     z-index: 1;
+    display: none;
   }
 
   &::before {
@@ -86,7 +86,6 @@ const ProjectCard = styled.div`
     color: ${({ theme }) => theme.colors.primary};
     font-size: 0.7rem;
     padding: 0.5rem 1.5rem;
-    /* border-radius: 20px; */
     background-color: ${({ theme }) => theme.colors.accent};
     position: absolute;
     top: 20px;
@@ -99,7 +98,6 @@ const ProjectCard = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
     flex-direction: row;
-    height: 370px;
     width: 700px;
 
     &::after {
@@ -112,41 +110,36 @@ const ProjectCard = styled.div`
 `;
 
 const ProjectPreview = styled.div`
-  height: 40%;
+  height: 200px;
+  padding: 1rem;
   width: 100%;
   background: url(${({ previewBg }) => previewBg});
   background-position: center;
   background-size: cover;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.accent};
 
   img {
     width: 85%;
-    position: relative;
-    /* top: 20px; */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     box-shadow: ${({ theme }) => theme.shadows[0]};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-    height: 100%;
+    height: initial;
     width: 50%;
-
-    img {
-      top: 50%;
-      transform: translateY(-50%);
-      left: 8px;
-    }
+    border-bottom: none;
+    border-right: 2px solid ${({ theme }) => theme.colors.accent};
   }
 `;
 
 const ProjectDetails = styled.div`
   display: flex;
   flex-direction: column;
-  height: 60%;
   justify-content: center;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   text-align: left;
   width: 100%;
   z-index: 2;
