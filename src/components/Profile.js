@@ -11,7 +11,7 @@ const Profile = () => {
       <ProfileHeader>
         <img src={formal} alt="" />
         <h1>Rodel David</h1>
-        <p>Fullstack Developer</p>
+        <p>Software Engineer</p>
       </ProfileHeader>
       <ProfileDetails>
         <hr />
