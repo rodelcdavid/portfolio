@@ -22,6 +22,19 @@ function App() {
     }, 2900);
   }, []);
 
+  //Wake up project servers
+  useEffect(() => {
+    const wakeUpServers = async () => {
+      try {
+        await fetch("https://bookxmovie-api.onrender.com");
+        await fetch("https://picmodoro-api.onrender.com");
+      } catch (error) {
+        console.error("Error waking up servers:", error);
+      }
+    };
+    wakeUpServers();
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
